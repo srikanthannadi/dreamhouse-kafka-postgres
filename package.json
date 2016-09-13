@@ -1,0 +1,17 @@
+{
+  "name": "dreamhouse-kafka-postgres",
+  "engines": {
+    "node": "6.1.x"
+  },
+  "scripts": {
+    "dev": "node node_modules/nodemon/bin/nodemon.js kafkatopg.js",
+    "start": "node kafkatopg"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
+  },
+  "dependencies": {
+    "pg": "4.5.5",
+    "no-kafka": "git://github.com/crcastle/kafka.git#3.0"
+  }
+}

@@ -1,0 +1,12 @@
+/node_modules/
+/www/build/
+/platforms/
+/plugins/
+/npm-debug.log
+/.idea/
+*.swp
+.DS_Store
+Thumbs.db
+/.env
+/client.crt
+/client.key
