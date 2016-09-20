@@ -10,12 +10,11 @@ if (process.env.DATABASE_URL !== undefined) {
 var client = new pg.Client(connectionString);
 client.connect();
 
-client.query('SELECT * FROM interactions LIMIT 1', function(error, data) {
+client.query('SELECT * FROM interactions LIMIT 1', function(error) {
   if (error !== null) {
-    client.query('CREATE TABLE interactions (id SERIAL NOT NULL, path CHARACTER VARYING(512))');
+    client.query('CREATE TABLE interactions (id SERIAL NOT NULL, userId CHARACTER VARYING(64), propertyId CHARACTER VARYING(64), eventType CHARACTER VARYING(64), date TIMESTAMP)');
   }
 });
-
 
 var brokerUrls = process.env.KAFKA_URL.replace(/\+ssl/g,'');
 
@@ -31,7 +30,7 @@ consumer.init().then(function() {
   return consumer.subscribe('interactions', [0], function(messageSet, topic, partition) {
     messageSet.forEach(function(m) {
       var data = JSON.parse(m.message.value.toString('utf8'));
-      client.query('INSERT INTO interactions(path) VALUES($1)', [data.path]);
+      client.query('INSERT INTO interactions(userId, propertyId, eventType, date) VALUES($1, $2, $3, to_timestamp($4))', [data.userId, data.propertyId, data.eventType, Math.floor(data.date / 1000)]);
     });
   });
 });
