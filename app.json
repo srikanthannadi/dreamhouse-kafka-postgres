@@ -1,12 +1,18 @@
 {
-  "name": "dreamhouse-web-app",
-  "description": "DreamHouse Web App",
+  "name": "dreamhouse-kafka-postgres",
+  "description": "Dreamhouse Kafka Postgres",
   "keywords": [
-    "app-cloud"
+    "app-cloud",
+    "kafka",
+    "postgres"
   ],
-  "repository": "https://github.com/dreamhouseapp/dreamhouse-web-app",
+  "repository": "https://github.com/dreamhouseapp/dreamhouse-kafka-postgres",
   "addons": [
-    "heroku-postgresql",
-    "heroku-kafka"
-  ]
+    "heroku-postgresql"
+  ],
+  "formation": {
+    "kafkatopg": {
+      "quantity": 1
+    }
+  }
 }
