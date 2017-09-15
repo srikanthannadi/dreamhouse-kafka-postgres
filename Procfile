@@ -1,1 +1,1 @@
-kafkatopg: ./env.sh && npm start
+kafkatopg: npm start

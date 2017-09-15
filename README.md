@@ -22,9 +22,7 @@ Run on Heroku:
 
 Run Locally:
 
-1. [Install and start Postgres](https://wiki.postgresql.org/wiki/Detailed_installation_guides)
 1. [Install Node.js](https://nodejs.org/en/)
-1. Create a database in Postgres named `dreamhouse`
 1. Fetch the NPM dependencies: `npm install`
 1. Get the Kafka environment variables from a Heroku app:
 
@@ -32,9 +30,5 @@ Run Locally:
         set -o allexport
         source .env
         set +o allexport
-
-1. Create the Kafka certs:
-
-        ./env.sh
 
 1. Start the app: `npm run dev`
