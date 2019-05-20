@@ -1,6 +1,9 @@
 Dreamhouse Kafka Postgres
 -------------------------
 
+
+[![Build Status](https://dev.azure.com/SrikanthReddyAnnadi1/SrikanthReddyAnnadi1/_apis/build/status/srikanthannadi.dreamhouse-kafka-postgres?branchName=master)](https://dev.azure.com/SrikanthReddyAnnadi1/SrikanthReddyAnnadi1/_build/latest?definitionId=1&branchName=master)
+
 Consumes events from Kafka and inserts them into Postgres.
 
 Run on Heroku:
